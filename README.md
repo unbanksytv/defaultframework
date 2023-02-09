@@ -1,3 +1,8 @@
+# Ambition
+
+Refactor the frontend into the current Typescript/NextJS MVP
+Define all contract parameters and setup Tally to allow voting on them, before we deploy to mainnet, including the fair launch mechanics. 
+
 # Degens Vibes
 
 
@@ -16,6 +21,8 @@ The WETH proceeds from Degen Vibes auction are immediately and automatically inv
 Today, most projects take a process-centric approach towards protocol development: each smart contract is developed to manage a process along a chain of logic that is triggered when external interactions occur. This is generally the most intuitive approach because it’s how our brain thinks when designing systems: one step in logic at a time. However, there’s an inherent issue in building a protocol this way. Over time, as the protocol evolves, more “steps in logic” are added across the system, creating long and convoluted chains of processes. When protocols are architected in these “web-like” structures, they can be difficult to understand, as they break a simple interaction into multiple layers of abstract logic. When contracts are developed this way, it’s difficult to track down where the calls are coming from or going to—it’s easy to get lost in the web of logic. This puts a huge burden on a user trying to understand the system, often requiring them to read an excessive amount of documentation just to figure out what’s going on behind the scenes. This pattern can be frustrating to deal with, and discouraging developers from contributing to the existing codebase or integrating with the protocol. And when they do, it increases the potential for bugs and unintended behavior to occur.
 
 # The Default Framework for Protocol Development
+
+A modular and opinionated n-tier architecture for protocols, prioritizing simplicity, 1-way data flows and extensibility via auditable onchain mechanisms. It's the first iteration of automated utilization of the treasury. The governor is a new governance contract written by @fullyallocated as a method for voters to directly add and remove the contracts connected to the Kernel, thereby having full control of the protocol's architecture. It also has a diff way of proposing and counting of votes.
 
 The core philosophy of Default is to shift the focus of writing contracts away from organizing contracts around processes, and towards organizing contracts around data models. In particular, what data models exist as protocol dependencies, and how they can be modified. Majine the smell of something look like this:
   
